@@ -4,10 +4,7 @@ const socket = io('/')
 
 //using peerjs to create a peer
 //due to working on local server we are defining host and port
-const myPeer = new Peer(undefined, {
-  host: '/',
-  port: '3001'
-})
+const myPeer = new Peer()
 
 //reference to video grid from room.ejs
 const videoGrid = document.getElementById('video-grid')
