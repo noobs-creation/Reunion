@@ -1,0 +1,26 @@
+npm init -y
+
+npm i express ejs socket.io
+
+npm i uuid
+
+npm i --save-dev nodemon
+
+npm i -g peer
+peerjs --port 3001
+
+changes in package.json
+"scripts" : {
+    "devStart" : "nodemon server.js"
+}
+
+
+for deploying on heroku
+
+"scripts" : {
+    "start" : "node server.js"
+}
+
+node start
+
+
