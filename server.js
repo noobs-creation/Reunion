@@ -4,6 +4,12 @@ const app = express()
 const server = require('http').Server(app)
 
 const io = require('socket.io')(server)
+const { ExpressPeerServer } = require('peer')
+const peerServer = ExpressPeerServer(server, {
+  debug: true
+})
+
+app.use('/peerjs', peerServer)
 
 //for dynamic url we are using uuid
 const { v4: uuidV4 } = require('uuid')
@@ -46,4 +52,4 @@ io.on('connection', socket => {
 })
 
 //starts server on port 3000
-server.listen(3000)
+server.listen(process.env.PORT||3000)
